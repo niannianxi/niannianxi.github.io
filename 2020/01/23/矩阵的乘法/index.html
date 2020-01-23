@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
+  
+  <title>矩阵的乘法 - Hexo</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
   
 
-  
-  <title>矩阵的乘法 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
   <meta name="description" content="矩阵的乘法 矩阵乘法作为算法题我觉得对我来说是比较难想的，而且作为没学线性代数的我来说，这简直就是场灾难，在我研究了书上及网上的有关资料后，我觉得自己应该差不多可以理解矩阵乘法的要领了，希望可以帮助大家：其实矩阵的运算包括许多种，有加减乘除法等等。矩阵加法就是相同位置的数字加一下。 矩阵减法也类似。)矩阵乘以一个常数，就是所有位置都乘以这个数。但是，等到矩阵乘以矩阵的时候，一切就不一样了。首先让我">
 <meta property="og:type" content="article">
 <meta property="og:title" content="矩阵的乘法">
@@ -22,77 +26,119 @@
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200121214353344.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
   
   
-<link rel="stylesheet" href="/css/style.css">
-
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
+  <link rel="stylesheet" href="/css/style.css?v=1579776515361">
 <meta name="generator" content="Hexo 4.2.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-矩阵的乘法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/23/%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B9%98%E6%B3%95/" class="article-date">
-  <time datetime="2020-01-23T09:44:25.604Z" itemprop="datePublished">2020-01-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+<body class="mdui-drawer-body-left">
   
-    <h1 class="article-title" itemprop="name">
-      矩阵的乘法
-    </h1>
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1579785688035&amp;di=af3aea98f310293e21a6a16ad417ce21&amp;imgtype=0&amp;src=http%3A%2F%2Fpicture.ik123.com%2Fuploads%2Fallimg%2F180526%2F4-1P526110U7.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title="John Doe" class="mdui-btn mdui-btn-icon"><img src="/images/avatar.png"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="John Doe">
+            <img src="/images/avatar.png" alt="John Doe">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>Articles</span>2</div>
+        <div><span>Tags</span>0</div>
+        <div><span>Categories</span>0</div>
+    </div>
+    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </ul>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Social</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/475187387" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/niannianxi/code" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a>
+    </div>
+</div>
+  
   
 
-      </header>
+  
+  
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">Archive</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2020 John Doe
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://nexmoe.com/hexo-theme-nexmoe.html" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    <div class="nexmoe-post-cover"> 
+        
+            <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1579785688035&amp;di=af3aea98f310293e21a6a16ad417ce21&amp;imgtype=0&amp;src=http%3A%2F%2Fpicture.ik123.com%2Fuploads%2Fallimg%2F180526%2F4-1P526110U7.jpg">
+        
+        <h1>矩阵的乘法</h1>
+    </div>
+  <div class="nexmoe-post-meta">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年01月23日</a>
+    <a><i class="nexmoefont icon-areachart"></i>910 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 4 分钟</a>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="矩阵的乘法"><a href="#矩阵的乘法" class="headerlink" title="矩阵的乘法"></a>矩阵的乘法</h1><p> 矩阵乘法作为算法题我觉得对我来说是比较难想的，而且作为没学线性代数的我来说，这简直就是场灾难，在我研究了书上及网上的有关资料后，我觉得自己应该差不多可以理解矩阵乘法的要领了，希望可以帮助大家：其实矩阵的运算包括许多种，有加减乘除法等等。矩阵加法就是相同位置的数字加一下。<img src="https://img-blog.csdnimg.cn/20200121214353344.png" alt="在这里插入图片描述"><br> 矩阵减法也类似。<img src="https://img-blog.csdnimg.cn/20200121214423587.png" alt="在这里插入图片描述">)矩阵乘以一个常数，就是所有位置都乘以这个数。但是，等到矩阵乘以矩阵的时候，一切就不一样了。<img src="https://img-blog.csdnimg.cn/20200121214527692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pYW5uaWFueGk=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">首先让我们了解下矩阵乘法：<strong>矩阵乘法（英语：matrix multiplication）是一种根据两个矩阵得到第三个矩阵的二元运算，第三个矩阵即前两者的乘积，称为矩阵积*</strong></p>
+    
+  </div>
+  <article>
+    <h1 id="矩阵的乘法"><a href="#矩阵的乘法" class="headerlink" title="矩阵的乘法"></a>矩阵的乘法</h1><p> 矩阵乘法作为算法题我觉得对我来说是比较难想的，而且作为没学线性代数的我来说，这简直就是场灾难，在我研究了书上及网上的有关资料后，我觉得自己应该差不多可以理解矩阵乘法的要领了，希望可以帮助大家：其实矩阵的运算包括许多种，有加减乘除法等等。矩阵加法就是相同位置的数字加一下。<img src="https://img-blog.csdnimg.cn/20200121214353344.png" alt="在这里插入图片描述"><br> 矩阵减法也类似。<img src="https://img-blog.csdnimg.cn/20200121214423587.png" alt="在这里插入图片描述">)矩阵乘以一个常数，就是所有位置都乘以这个数。但是，等到矩阵乘以矩阵的时候，一切就不一样了。<img src="https://img-blog.csdnimg.cn/20200121214527692.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pYW5uaWFueGk=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">首先让我们了解下矩阵乘法：<strong>矩阵乘法（英语：matrix multiplication）是一种根据两个矩阵得到第三个矩阵的二元运算，第三个矩阵即前两者的乘积，称为矩阵积*</strong></p>
 <p><strong>它只有在第一个矩阵的列数（column）和第二个矩阵的行数（row）相同时才有意义*</strong></p>
 <p>这个结果是怎么算出来的呢，下面听我慢慢的分析一下：咱们先将第一个矩阵设为A，第二个为B，最后乘积得到的矩阵为C。</p>
 <p><strong>A中的第一行各个元素分别与B中第一列各个元素相乘得到的和即为C中的第一个元素（2×1+1×1=3）<br>A中的第一行各个元素分别与B中第二列各个元素相乘得到的和即为C中的第二个元素（2×2+1×0=4）<br>A中第一行已经计算完毕，现在应该为第二行了，C中也变为了第二行。<br>A中的第二行各个元素分别与B中第一列各个元素相乘得到的和即为C中的第三个元素（4×1+3×1=7）A中的第二行各个元素分别与B中第二列各个元素相乘得到的和即为C中的第四个元素（4×2+3×0=8）</strong></p>
@@ -101,109 +147,66 @@
 
 <p>这就是矩阵乘法的代码了，需要我们认真思考才可以想到的哦，fighting!!!</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/23/%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B9%98%E6%B3%95/" data-id="ck5qjwie30000sotu7iu36div" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
+  </article>
   
     
-<nav id="article-nav">
-  
-  
-    <a href="/2020/01/23/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
+<div class="nexmoe-post-copyright">
+<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+<strong>Author：</strong>John Doe<br>
+<strong>Link：</strong><a href="http://yoursite.com/2020/01/23/%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B9%98%E6%B3%95/" title="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;23&#x2F;%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B9%98%E6%B3%95&#x2F;" target="_blank" rel="noopener">http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;23&#x2F;%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B9%98%E6%B3%95&#x2F;</a><br>
+
+  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+</div>
+
 
   
-</article>
-
+  <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '80b2453b6d5f37ad6225',
+        clientSecret: '43e99fa852795c9a7b3eb924b2558c64b84bbdeb',
+        id: window.location.pathname,
+        repo: 'nexmoe.github.io',
+        owner: 'nexmoe',
+        admin: 'nexmoe'
+    })
+    gitalk.render('gitalk')
+</script>
 </section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
+</div>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+ 
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="/js/app.js?v=1579776515363"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
 
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/01/23/%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B9%98%E6%B3%95/">矩阵的乘法</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/23/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
 
 
-<script src="/js/script.js"></script>
 
-
-
-
-  </div>
 </body>
+
 </html>
